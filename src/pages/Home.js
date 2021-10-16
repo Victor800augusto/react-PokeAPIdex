@@ -1,14 +1,14 @@
 import React from "react";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
-import SectionPokemon from "../components/SectionPokemon";
+import MainPokemon from "../components/MainPokemon";
 import { StyledHome } from "./styles/Home.style";
 
 const Home = () => {
   return (
     <StyledHome>
       <Header />
-      <SectionPokemon />
+      <MainPokemon />
       <Footer />
     </StyledHome>
   );
