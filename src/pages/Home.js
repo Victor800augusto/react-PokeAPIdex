@@ -1,11 +1,16 @@
 import React from "react";
-import { StyledTitle, StyledHeader } from "./styles/Home.style";
+import Header from "../components/Header";
+import Footer from "../components/Footer";
+import SectionPokemon from "../components/SectionPokemon";
+import { StyledHome } from "./styles/Home.style";
 
 const Home = () => {
   return (
-    <StyledHeader>
-      <StyledTitle>Pokédex</StyledTitle>
-    </StyledHeader>
+    <StyledHome>
+      <Header />
+      <SectionPokemon />
+      <Footer />
+    </StyledHome>
   );
 };
 

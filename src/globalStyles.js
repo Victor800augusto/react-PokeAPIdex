@@ -14,8 +14,10 @@ const GlobalStyles = createGlobalStyle`
     }
 
     body {
+        text-align:center;
         background: #e73221;
         font-family: Arial, Helvetica, sans-serif;
+        line-height:1.5;
     }
     ul {
         list-style-type: none;
