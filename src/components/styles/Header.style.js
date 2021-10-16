@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const StyledHeader = styled.header`
-  padding-top: 1.125rem;
+  padding-top: 18px;
   text-align: center;
 `;
 
