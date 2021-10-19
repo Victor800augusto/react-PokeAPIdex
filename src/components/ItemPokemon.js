@@ -40,12 +40,11 @@ const ItemPokemon = () => {
         <ImageContainer>
           <img src={pokemon.sprites.front_default} alt="" />
         </ImageContainer>
-        <ContainerPokemonData>
+        <ContainerPokemonData props={pokemon.types}>
           <IdPokemon>{pokemon.id}</IdPokemon>
           <h3>{titleCase(pokemon.species.name)}</h3>
           <ContainerTypePokemon>
             {pokemon.types.map((item, index) => {
-              console.log(item);
               return (
                 <TypePokemon key={index} {...item}>
                   {titleCase(item.type.name)}

@@ -1,8 +1,6 @@
 import styled from "styled-components";
 import { typeColors } from "../../data/pokemonTypes.js";
 
-console.log(typeColors);
-
 export const StyledItemPokemon = styled.div`
    {
     display: flex;
@@ -47,6 +45,21 @@ export const ContainerPokemonData = styled.div`
     position: relative;
     border-top-right-radius: 6px;
     border-bottom-right-radius: 6px;
+    background: ${(props) => {
+      let colors = [];
+      for (let i = 0; i < props.props.length; i++) {
+        let color = typeColors.find(
+          (type) => type.type === props.props[i].type.name
+        );
+        colors.push(color.color);
+      }
+      console.log(colors);
+      if (props.props.length === 1) {
+        return `${colors[0]}85`;
+      } else {
+        return `linear-gradient(90deg,${colors[0]}85,${colors[1]}85)`;
+      }
+    }};
   }
 `;
 
