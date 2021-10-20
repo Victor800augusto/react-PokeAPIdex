@@ -19,6 +19,15 @@ export const StyledItemPokemon = styled.div`
   h3 {
     margin: 0 auto;
   }
+  @media (max-width: 400px) {
+     {
+      min-width: 250px;
+    }
+    h3 {
+      font-size: 1.25rem;
+      margin-top: 20px;
+    }
+  }
 `;
 
 export const ImageContainer = styled.figure`
@@ -84,6 +93,20 @@ export const ContainerTypePokemon = styled.div`
   span:first-child {
     margin-right: 10px;
   }
+
+  @media (max-width: 400px) {
+     {
+      display: flex;
+      flex-wrap: wrap;
+      flex-direction: row;
+      justify-content: center;
+    }
+
+    span:first-child {
+      margin-right: 0;
+      margin-bottom: 8px;
+    }
+  }
 `;
 
 export const TypePokemon = styled.span`
@@ -101,4 +124,9 @@ export const TypePokemon = styled.span`
     let textColor = typeColors.find((type) => type.type === props.type.name);
     return textColor.textColor;
   }};
+  @media (max-width: 400px) {
+     {
+      font-size: 0.875rem;
+    }
+  }
 `;

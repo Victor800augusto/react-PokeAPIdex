@@ -16,4 +16,11 @@ export const StyledContainer = styled.div`
     box-shadow: 0 0 2em #c2d6ed;
     border-radius: 20px;
   }
+
+  @media (max-width: 650px) {
+    padding: 50px 35px;
+  }
+  @media (max-width: 470px) {
+    padding: 40px 15px;
+  }
 `;
