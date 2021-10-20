@@ -53,7 +53,6 @@ export const ContainerPokemonData = styled.div`
         );
         colors.push(color.color);
       }
-      console.log(colors);
       if (props.props.length === 1) {
         return `${colors[0]}85`;
       } else {

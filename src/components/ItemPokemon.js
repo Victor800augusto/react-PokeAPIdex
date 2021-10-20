@@ -9,13 +9,9 @@ import {
 } from "./styles/ItemPokemon.style";
 import titleCase from "../utils";
 
-const ItemPokemon = () => {
+const ItemPokemon = ({ url }) => {
   const [pokemon, setPokemon] = useState({});
   const [isLoading, setIsLoading] = useState(true);
-
-  //
-  const url = `https://pokeapi.co/api/v2/pokemon/1/`;
-  //
 
   const fetchPokemon = async (url) => {
     setIsLoading(true);

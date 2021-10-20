@@ -5,6 +5,8 @@ const AppContext = React.createContext();
 const AppProvider = ({ children }) => {
   const [dataPokemon, setDataPokemon] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
+  let totalPages;
+  const quantityPokemon = 21;
 
   const fetchPokemon = async () => {
     setIsLoading(true);
@@ -12,6 +14,7 @@ const AppProvider = ({ children }) => {
       const response = await fetch("https://pokeapi.co/api/v2/pokedex/1");
       const data = await response.json();
       setDataPokemon(data.pokemon_entries);
+      totalPages = Math.ceil(data.pokemon_entries.length / 21);
     } catch (error) {
       console.log(error);
       setIsLoading(false);
@@ -24,7 +27,9 @@ const AppProvider = ({ children }) => {
   }, []);
 
   return (
-    <AppContext.Provider value={{ dataPokemon, isLoading }}>
+    <AppContext.Provider
+      value={{ dataPokemon, isLoading, totalPages, quantityPokemon }}
+    >
       {children}
     </AppContext.Provider>
   );
