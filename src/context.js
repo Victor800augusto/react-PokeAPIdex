@@ -5,6 +5,7 @@ const AppContext = React.createContext();
 const AppProvider = ({ children }) => {
   const [dataPokemon, setDataPokemon] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
+
   let totalPages;
   const quantityPokemon = 21;
 
@@ -28,7 +29,12 @@ const AppProvider = ({ children }) => {
 
   return (
     <AppContext.Provider
-      value={{ dataPokemon, isLoading, totalPages, quantityPokemon }}
+      value={{
+        dataPokemon,
+        isLoading,
+        totalPages,
+        quantityPokemon,
+      }}
     >
       {children}
     </AppContext.Provider>
