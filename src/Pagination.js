@@ -2,6 +2,8 @@ import React from "react";
 import classnames from "classnames";
 import { usePagination, DOTS } from "./usePagination";
 import "./pagination.css";
+import { MdArrowBackIosNew, MdArrowForwardIos } from "react-icons/md";
+
 const Pagination = (props) => {
   const {
     onPageChange,
@@ -50,7 +52,8 @@ const Pagination = (props) => {
           scrollTop();
         }}
       >
-        <div className="arrow left" />
+        {/* <div className="arrow left" /> */}
+        <MdArrowBackIosNew className="arrow" />
       </li>
       {paginationRange.map((pageNumber, index) => {
         if (pageNumber === DOTS) {
@@ -85,7 +88,8 @@ const Pagination = (props) => {
           scrollTop();
         }}
       >
-        <div className="arrow right" />
+        {/* <div className="arrow right" /> */}
+        <MdArrowForwardIos className="arrow" />
       </li>
     </ul>
   );

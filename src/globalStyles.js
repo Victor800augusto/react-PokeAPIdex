@@ -8,6 +8,10 @@ const GlobalStyles = createGlobalStyle`
         box-sizing: border-box;
     }
 
+    html {
+        scroll-behavior: smooth;
+    }
+
     @font-face {
         font-family: pokemonFont;
         src: url(${pokemonFont}) format("truetype");
