@@ -45,3 +45,33 @@
   background-color: transparent;
   cursor: default;
 }
+
+@media (max-width: 575px) {
+  .pagination-container .pagination-item {
+    height: 40px;
+    width: 40px;
+  }
+}
+
+@media (max-width: 470px) {
+  .pagination-container .pagination-item {
+    height: 25px;
+    width: 25px;
+    font-size: 16px;
+    line-height: 25px;
+  }
+}
+
+@media (min-width: 385px) and (max-width: 500px) {
+  .pagination-container .pagination-item {
+    height: 30px;
+    width: 30px;
+    font-size: 16px;
+    line-height: 30px;
+  }
+}
+@media (max-width: 360px) {
+  .pagination-container .pagination-item {
+    margin: 0 1px;
+  }
+}
