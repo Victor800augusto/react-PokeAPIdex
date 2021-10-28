@@ -6,6 +6,11 @@ import {
   IdPokemon,
   ContainerTypePokemon,
   TypePokemon,
+  LoadingImageContainer,
+  LoadingContainerPokemonData,
+  LoadingIdPokemon,
+  LoadingNamePokemon,
+  LoadingContainerTypePokemon,
 } from "./styles/ItemPokemon.style";
 import titleCase from "../utils";
 
@@ -52,7 +57,16 @@ const ItemPokemon = ({ url }) => {
       </StyledItemPokemon>
     );
   } else {
-    return <div>error</div>;
+    return (
+      <StyledItemPokemon>
+        <LoadingImageContainer />
+        <LoadingContainerPokemonData>
+          <LoadingIdPokemon />
+          <LoadingNamePokemon />
+          <LoadingContainerTypePokemon />
+        </LoadingContainerPokemonData>
+      </StyledItemPokemon>
+    );
   }
 };
 

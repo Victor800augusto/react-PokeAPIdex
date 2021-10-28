@@ -31,6 +31,11 @@ const Pagination = (props) => {
     onPageChange(currentPage - 1);
   };
 
+  const scrollTop = () => {
+    document.body.scrollTop = 0;
+    document.documentElement.scrollTop = 0;
+  };
+
   let lastPage = paginationRange[paginationRange.length - 1];
   return (
     <ul
@@ -40,21 +45,32 @@ const Pagination = (props) => {
         className={classnames("pagination-item", {
           disabled: currentPage === 1,
         })}
-        onClick={onPrevious}
+        onClick={() => {
+          onPrevious();
+          scrollTop();
+        }}
       >
         <div className="arrow left" />
       </li>
-      {paginationRange.map((pageNumber) => {
+      {paginationRange.map((pageNumber, index) => {
         if (pageNumber === DOTS) {
-          return <li className="pagination-item dots">&#8230;</li>;
+          return (
+            <li key={index} className="pagination-item dots">
+              &#8230;
+            </li>
+          );
         }
 
         return (
           <li
+            key={index}
             className={classnames("pagination-item", {
               selected: pageNumber === currentPage,
             })}
-            onClick={() => onPageChange(pageNumber)}
+            onClick={() => {
+              onPageChange(pageNumber);
+              scrollTop();
+            }}
           >
             {pageNumber}
           </li>
@@ -64,7 +80,10 @@ const Pagination = (props) => {
         className={classnames("pagination-item", {
           disabled: currentPage === lastPage,
         })}
-        onClick={onNext}
+        onClick={() => {
+          onNext();
+          scrollTop();
+        }}
       >
         <div className="arrow right" />
       </li>

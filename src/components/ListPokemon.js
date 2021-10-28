@@ -19,7 +19,6 @@ const ListPokemon = () => {
         }
       }
 
-      console.log(arrayPokemon);
       return arrayPokemon.map((pokemon) => {
         const id = pokemon.entry_number;
         const url = `https://pokeapi.co/api/v2/pokemon/${id}/`;
