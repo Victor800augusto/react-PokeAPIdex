@@ -8,8 +8,7 @@ import Pagination from "../Pagination";
 let PageSize = 21;
 
 const MainPokemon = () => {
-  const { dataPokemon } = useGlobalContext();
-  const [currentPage, setCurrentPage] = useState(1);
+  const { dataPokemon, currentPage, setCurrentPage } = useGlobalContext();
 
   return (
     <StyledMain>

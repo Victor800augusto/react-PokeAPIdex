@@ -3,7 +3,8 @@ import { useGlobalContext } from "../context";
 import ItemPokemon from "./ItemPokemon";
 
 const ListPokemon = () => {
-  const { dataPokemon, isLoading, quantityPokemon } = useGlobalContext();
+  const { dataPokemon, isLoading, quantityPokemon, currentPage } =
+    useGlobalContext();
 
   switch (isLoading) {
     case true:
@@ -13,10 +14,12 @@ const ListPokemon = () => {
       // console.log(quantityPokemon, dataPokemon[0]);
       for (let i = 0; i < quantityPokemon; i++) {
         // console.log(dataPokemon[i]);
-        arrayPokemon.push(dataPokemon[i]);
+        if (dataPokemon[i + (currentPage - 1) * 21] !== undefined) {
+          arrayPokemon.push(dataPokemon[i + (currentPage - 1) * 21]);
+        }
       }
-      console.log(arrayPokemon);
 
+      console.log(arrayPokemon);
       return arrayPokemon.map((pokemon) => {
         const id = pokemon.entry_number;
         const url = `https://pokeapi.co/api/v2/pokemon/${id}/`;

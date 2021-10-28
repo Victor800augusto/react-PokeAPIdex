@@ -5,6 +5,7 @@ const AppContext = React.createContext();
 const AppProvider = ({ children }) => {
   const [dataPokemon, setDataPokemon] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
+  const [currentPage, setCurrentPage] = useState(1);
 
   let totalPages;
   const quantityPokemon = 21;
@@ -34,6 +35,8 @@ const AppProvider = ({ children }) => {
         isLoading,
         totalPages,
         quantityPokemon,
+        currentPage,
+        setCurrentPage,
       }}
     >
       {children}
