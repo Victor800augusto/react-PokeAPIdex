@@ -9,9 +9,25 @@ const options = [
 ];
 
 const styles = {
+  container: (base) => ({
+    ...base,
+    "@media (min-width:550px)": {
+      alignSelf: "flex-end",
+    },
+  }),
   control: (provided) => ({
     ...provided,
     backgroundColor: "#5c5c5c",
+    borderColor: "black",
+    borderWidth: "3px",
+    "&:hover": {
+      outline: "none",
+    },
+    boxShadow: "none",
+
+    "@media (min-width:550px)": {
+      width: "200px",
+    },
   }),
   placeholder: (base) => ({
     ...base,
@@ -26,10 +42,20 @@ const styles = {
     color: "#fff",
     fontSize: "18px",
   }),
+  menu: (provided) => ({
+    ...provided,
+    margin: 0,
+    "@media (min-width:550px)": {
+      width: "200px",
+    },
+  }),
   menuList: (provided) => ({
     ...provided,
     paddingTop: 0,
     paddingBottom: 0,
+    borderStyle: "solid",
+    borderWidth: "3px",
+    borderTop: "none",
   }),
   option: (provided, state) => ({
     ...provided,
