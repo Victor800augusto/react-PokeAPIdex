@@ -1,5 +1,6 @@
 import React from "react";
 import Select from "react-select";
+import { useGlobalContext } from "../context";
 
 const options = [
   { value: "numberAsc", label: "Lowest Number" },
@@ -71,6 +72,8 @@ const styles = {
 };
 
 const OrderSelect = () => {
+  const { handleChange } = useGlobalContext();
+
   return (
     <Select
       options={options}
@@ -78,7 +81,7 @@ const OrderSelect = () => {
       placeholder="Order by..."
       styles={styles}
       components={{ IndicatorSeparator: () => null }}
-      // onChange={handleChange}
+      onChange={handleChange}
     ></Select>
   );
 };

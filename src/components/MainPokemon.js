@@ -9,7 +9,7 @@ import OrderSelect from "../components/OrderSelect";
 let PageSize = 21;
 
 const MainPokemon = () => {
-  const { dataPokemon, currentPage, setCurrentPage } = useGlobalContext();
+  const { dataPokemonOrder, currentPage, setCurrentPage } = useGlobalContext();
 
   return (
     <StyledMain>
@@ -18,7 +18,7 @@ const MainPokemon = () => {
       <Pagination
         className="pagination-bar"
         currentPage={currentPage}
-        totalCount={dataPokemon.length}
+        totalCount={dataPokemonOrder.length}
         pageSize={PageSize}
         onPageChange={(page) => setCurrentPage(page)}
       />
