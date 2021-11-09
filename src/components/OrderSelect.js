@@ -56,7 +56,9 @@ const styles = {
     paddingBottom: 0,
     borderStyle: "solid",
     borderWidth: "3px",
+    borderRadius: "4px",
     borderTop: "none",
+    backgroundColor: "#5c5c5c",
   }),
   option: (provided, state) => ({
     ...provided,

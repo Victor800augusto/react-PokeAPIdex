@@ -1,6 +1,7 @@
 import React from "react";
-import { StyledMain } from "./styles/MainPokemon.style";
+import { StyledMain, ContainerTools } from "./styles/MainPokemon.style";
 import ContainerPokemon from "./ContainerPokemon";
+import ContainerSearch from "./ContainerSearch";
 import { useGlobalContext } from "../context";
 
 import Pagination from "../Pagination";
@@ -13,7 +14,11 @@ const MainPokemon = () => {
 
   return (
     <StyledMain>
-      <OrderSelect />
+      <ContainerTools>
+        <ContainerSearch />
+        <OrderSelect />
+      </ContainerTools>
+
       <ContainerPokemon />
       <Pagination
         className="pagination-bar"

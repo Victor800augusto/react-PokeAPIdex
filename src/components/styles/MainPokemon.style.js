@@ -15,3 +15,12 @@ export const StyledMain = styled.section`
     padding: 20px 10px;
   }
 `;
+
+export const ContainerTools = styled.div`
+  display: flex;
+  justify-content: space-between;
+  @media (max-width: 550px) {
+    flex-direction: column;
+    gap: 25px;
+  }
+`;
