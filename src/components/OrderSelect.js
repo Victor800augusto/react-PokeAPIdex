@@ -21,6 +21,10 @@ const styles = {
     backgroundColor: "#5c5c5c",
     borderColor: "black",
     borderWidth: "3px",
+    //
+    minHeight: "30px",
+    height: "30px",
+    //
     "&:hover": {
       outline: "none",
     },
@@ -39,10 +43,24 @@ const styles = {
   singleValue: (base) => ({ ...base, color: "#fff", fontSize: "18px" }),
   valueContainer: (base) => ({
     ...base,
+    //
+    height: "24px",
+    padding: "0 6px",
+    //
     background: "#5c5c5c",
     color: "#fff",
+    //
     fontSize: "18px",
+    //
   }),
+
+  //
+  indicatorsContainer: (provided, state) => ({
+    ...provided,
+    height: "24px",
+  }),
+  //
+
   menu: (provided) => ({
     ...provided,
     margin: 0,
