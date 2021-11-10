@@ -1,10 +1,12 @@
 import React from "react";
-import { StyledHeader, StyledTitle } from "./styles/Header.style";
+import { StyledHeader } from "./styles/Header.style";
 
 const Header = () => {
+
+
   return (
     <StyledHeader>
-      <StyledTitle>Pokédex</StyledTitle>
+      <h1>Pokédex</h1>
     </StyledHeader>
   );
 };

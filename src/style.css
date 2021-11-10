@@ -1,0 +1,11 @@
+@font-face {
+  font-family: pokemonFont;
+  src: url(./fonts/Pokemon-Solid.ttf) format("truetype");
+}
+
+h1 {
+  font-family: pokemonFont, Arial, Helvetica, sans-serif;
+  color: #ffcb05;
+    -webkit-text-stroke: 1px #3466af;
+    text-shadow: 2px 2px 2px #000000;
+}

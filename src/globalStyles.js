@@ -1,4 +1,5 @@
 import { createGlobalStyle } from "styled-components";
+
 import pokemonFont from "./fonts/Pokemon-Solid.ttf";
 
 const GlobalStyles = createGlobalStyle`
@@ -10,11 +11,6 @@ const GlobalStyles = createGlobalStyle`
 
     html {
         scroll-behavior: smooth;
-    }
-
-    @font-face {
-        font-family: pokemonFont;
-        src: url(${pokemonFont}) format("truetype");
     }
 
     body {
