@@ -8,8 +8,9 @@ const AppProvider = ({ children }) => {
   const [orderType, setOrderType] = useState("numberAsc");
   const [isLoading, setIsLoading] = useState(true);
   const [currentPage, setCurrentPage] = useState(1);
+  const [totalPages, setTotalPages] = useState(1);
 
-  let totalPages;
+  // let totalPages;
   const quantityPokemon = 21;
 
   const fetchPokemon = async () => {
@@ -19,7 +20,7 @@ const AppProvider = ({ children }) => {
       const data = await response.json();
       setDataPokemon(data.pokemon_entries);
       setDataPokemonOrder(data.pokemon_entries);
-      totalPages = Math.ceil(data.pokemon_entries.length / 21);
+      setTotalPages(Math.ceil(data.pokemon_entries.length / 21));
     } catch (error) {
       console.log(error);
       setIsLoading(false);
@@ -64,9 +65,12 @@ const AppProvider = ({ children }) => {
   return (
     <AppContext.Provider
       value={{
+        dataPokemon,
         dataPokemonOrder,
+        setDataPokemonOrder,
         isLoading,
         totalPages,
+        setTotalPages,
         quantityPokemon,
         currentPage,
         setCurrentPage,
