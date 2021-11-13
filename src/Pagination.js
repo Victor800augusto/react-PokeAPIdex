@@ -22,7 +22,19 @@ const Pagination = (props) => {
   });
 
   if (currentPage === 0 || paginationRange.length < 2) {
-    return null;
+    return (
+      <ul
+        className={classnames("pagination-container", {
+          [className]: className,
+        })}
+      >
+        <li className="pagination-item selected disabled">1</li>
+      </ul>
+    );
+
+    //
+
+    //
   }
 
   const onNext = () => {
@@ -69,6 +81,7 @@ const Pagination = (props) => {
             key={index}
             className={classnames("pagination-item", {
               selected: pageNumber === currentPage,
+              disabled: pageNumber === currentPage,
             })}
             onClick={() => {
               onPageChange(pageNumber);
