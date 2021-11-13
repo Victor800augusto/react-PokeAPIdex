@@ -1,6 +1,7 @@
 import React from "react";
 import { useGlobalContext } from "../context";
 import ItemPokemon from "./ItemPokemon";
+import { DataLoading } from "./styles/ListPokemon.style";
 
 const ListPokemon = () => {
   const { dataPokemonOrder, isLoading, quantityPokemon, currentPage } =
@@ -8,7 +9,7 @@ const ListPokemon = () => {
 
   switch (isLoading) {
     case true:
-      return <div>true</div>;
+      return <DataLoading>Loading...</DataLoading>;
     case false:
       let arrayPokemon = [];
       for (let i = 0; i < quantityPokemon; i++) {
