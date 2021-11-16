@@ -10,7 +10,6 @@ const AppProvider = ({ children }) => {
   const [currentPage, setCurrentPage] = useState(1);
   const [totalPages, setTotalPages] = useState(1);
 
-  // let totalPages;
   const quantityPokemon = 21;
 
   const fetchPokemon = async () => {
@@ -47,7 +46,6 @@ const AppProvider = ({ children }) => {
     }
     if (selectedOption.value === "alphabetAZ") {
       let data = [...dataPokemon];
-      // sortName(data);
       setDataPokemonOrder(sortName(data));
       setCurrentPage(1);
     }

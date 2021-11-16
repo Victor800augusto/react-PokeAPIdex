@@ -8,8 +8,7 @@ import { useGlobalContext } from "../context";
 
 const ContainerSearch = () => {
   let debounceTimeout;
-  const { dataPokemonOrder, setDataPokemonOrder, dataPokemon } =
-    useGlobalContext();
+  const { setDataPokemonOrder, dataPokemon } = useGlobalContext();
 
   const handleKey = (e) => {
     const format = /[0-9A-z-]/g;
@@ -34,12 +33,7 @@ const ContainerSearch = () => {
             searchArray.push(data[i]);
           }
         }
-        if (searchArray.length === 0) {
-          // noResults.style.display = "block";
-        } else {
-          // noResults.style.display = "none";
-        }
-        searchGetArray(searchArray);
+        setDataPokemonOrder(searchArray);
       } else if (
         !isNaN(Number(e.target.value)) &&
         e.target.value.length !== 0
@@ -51,33 +45,15 @@ const ContainerSearch = () => {
             searchArray.push(data[i]);
           }
         }
-        if (searchArray.length === 0) {
-          // noResults.style.display = "block";
-        } else {
-          // noResults.style.display = "none";
-        }
-        searchGetArray(searchArray);
+        setDataPokemonOrder(searchArray);
       } else if (
         e.target.value.length === 0 ||
         (e.target.value.length < 3 && isNaN(e.target.value))
       ) {
-        // noResults.style.display = "none";
-        // isSearch = false;
-        // standardGetArray();
-        searchGetArray(data);
+        setDataPokemonOrder(data);
       }
     }, 700);
   };
-
-  function searchGetArray(searchArray) {
-    // isSearch = true;
-    let totalPages = Math.ceil(searchArray.length / 21);
-    setDataPokemonOrder(searchArray);
-    // containerPagination.innerHTML = createPagination(totalPages, page);
-    // let sortOrder = document.querySelector(".custom-select-options .selected")
-    //   .dataset.value;
-    // getArrayPokemon(1, searchArray, sortOrder);
-  }
 
   return (
     <StyledContainerSearch>
