@@ -4,7 +4,7 @@ import { useGlobalContext } from "../context";
 
 const options = [
   { value: "numberAsc", label: "Lowest Number" },
-  { value: "numberDec", label: "Highest Number" },
+  { value: "numberDes", label: "Highest Number" },
   { value: "alphabetAZ", label: "A-Z" },
   { value: "alphabetZA", label: "Z-A" },
 ];

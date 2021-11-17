@@ -34,25 +34,52 @@ const AppProvider = ({ children }) => {
     return array;
   };
 
+  const sortId = (array) => {
+    array.sort((a, b) => {
+      return a.entry_number - b.entry_number;
+    });
+    return array;
+  };
+
   const handleChange = (selectedOption) => {
     if (selectedOption.value === "numberAsc") {
-      setDataPokemonOrder(dataPokemon);
+      let data = [...dataPokemonOrder];
+      setDataPokemonOrder(sortId(data));
+      setOrderType("numberAsc");
       setCurrentPage(1);
     }
-    if (selectedOption.value === "numberDec") {
-      let data = [...dataPokemon];
-      setDataPokemonOrder(data.reverse());
+    if (selectedOption.value === "numberDes") {
+      let data = [...dataPokemonOrder];
+      setDataPokemonOrder(sortId(data).reverse());
+      setOrderType("numberDes");
       setCurrentPage(1);
     }
     if (selectedOption.value === "alphabetAZ") {
-      let data = [...dataPokemon];
+      let data = [...dataPokemonOrder];
       setDataPokemonOrder(sortName(data));
+      setOrderType("alphabetAZ");
       setCurrentPage(1);
     }
     if (selectedOption.value === "alphabetZA") {
-      let data = [...dataPokemon];
+      let data = [...dataPokemonOrder];
       setDataPokemonOrder(sortName(data).reverse());
+      setOrderType("alphabetZA");
       setCurrentPage(1);
+    }
+  };
+
+  const handleSearch = (searchArray) => {
+    if (orderType === "numberAsc") {
+      setDataPokemonOrder(sortId(searchArray));
+    }
+    if (orderType === "numberDes") {
+      setDataPokemonOrder(sortId(searchArray).reverse());
+    }
+    if (orderType === "alphabetAZ") {
+      setDataPokemonOrder(sortName(searchArray));
+    }
+    if (orderType === "alphabetZA") {
+      setDataPokemonOrder(sortName(searchArray).reverse());
     }
   };
 
@@ -74,6 +101,7 @@ const AppProvider = ({ children }) => {
         setCurrentPage,
         setOrderType,
         handleChange,
+        handleSearch,
       }}
     >
       {children}
