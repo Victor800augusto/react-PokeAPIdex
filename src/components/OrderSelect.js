@@ -74,8 +74,12 @@ const styles = {
     ...provided,
     fontWeight: state.isSelected ? "bold" : "normal",
     color: "#fff",
-    backgroundColor: state.isFocused ? "#66ccff " : "#5c5c5c",
-    backgroundColor: state.isSelected ? "#00aaff " : "#5c5c5c",
+
+    backgroundColor: state.isFocused
+      ? "#66ccff "
+      : state.isSelected
+      ? "#00aaff "
+      : "#5c5c5c",
     "&:hover": {
       backgroundColor: "#66ccff",
     },

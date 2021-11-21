@@ -33,7 +33,7 @@ const ItemPokemon = ({ url }) => {
 
   useEffect(() => {
     fetchPokemon(url);
-  }, []);
+  }, [url]);
 
   if (!isLoading) {
     return (
