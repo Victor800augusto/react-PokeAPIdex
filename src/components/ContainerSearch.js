@@ -8,7 +8,7 @@ import { useGlobalContext } from "../context";
 
 const ContainerSearch = () => {
   let debounceTimeout;
-  const { setDataPokemonOrder, dataPokemon } = useGlobalContext();
+  const { dataPokemon, handleSearch } = useGlobalContext();
 
   const handleKey = (e) => {
     const format = /[0-9A-z-]/g;
@@ -33,7 +33,7 @@ const ContainerSearch = () => {
             searchArray.push(data[i]);
           }
         }
-        setDataPokemonOrder(searchArray);
+        handleSearch(searchArray);
       } else if (
         !isNaN(Number(e.target.value)) &&
         e.target.value.length !== 0
@@ -45,12 +45,12 @@ const ContainerSearch = () => {
             searchArray.push(data[i]);
           }
         }
-        setDataPokemonOrder(searchArray);
+        handleSearch(searchArray);
       } else if (
         e.target.value.length === 0 ||
         (e.target.value.length < 3 && isNaN(e.target.value))
       ) {
-        setDataPokemonOrder(data);
+        handleSearch(data);
       }
     }, 700);
   };
